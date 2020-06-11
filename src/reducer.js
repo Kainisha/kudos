@@ -1,4 +1,4 @@
-import { SET_POSTS } from 'src/actions';
+import { SET_POSTS, SET_USERS } from 'src/actions';
 
 const initState = {
   posts: [],
@@ -12,6 +12,13 @@ const reducer = (state = initState, { type, payload }) => {
       return {
         ...state,
         posts,
+      };
+    }
+    case SET_USERS: {
+      const { users } = payload;
+      return {
+        ...state,
+        users,
       };
     }
     default: {

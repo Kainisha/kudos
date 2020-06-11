@@ -1,14 +1,11 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
-import { GET_POSTS, setPosts } from 'src/actions';
+import { put, takeLatest } from 'redux-saga/effects';
+import { GET_POSTS, setPosts, setUsers } from 'src/actions';
 import postsData from 'src/data/posts.json';
-
-const fetchPosts = async () => {
-  return postsData;
-};
+import userData from 'src/data/users.json';
 
 function* getPosts() {
-  const posts = yield call(fetchPosts);
-  yield put(setPosts({ posts }));
+  yield put(setPosts({ posts: postsData }));
+  yield put(setUsers({ users: userData }));
 }
 
 function* saga() {

@@ -1,0 +1,11 @@
+.header {
+    position: sticky;
+    box-sizing: border-box;
+    top: 0;
+    border-bottom: 1px solid lightgray;
+    height: 3rem;
+    box-shadow: 0 2px 3px lightgray;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}

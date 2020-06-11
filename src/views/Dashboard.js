@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getPosts as getPostsAction } from 'src/actions';
+import MainLayout from 'src/components/layout/MainLayout/MainLayout';
 
 const Dashboard = ({ posts, getPosts }) => {
   useEffect(() => {
@@ -10,12 +11,12 @@ const Dashboard = ({ posts, getPosts }) => {
   }, []);
 
   return (
-    <div>
+    <MainLayout>
       Dashboard test
       {posts.map(({ note }) => (
         <span>{note}</span>
       ))}
-    </div>
+    </MainLayout>
   );
 };
 
