@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "note": "test test test",
+        "author": {
+            "first_name": "test",
+            "last_name": "ddd"
+        },
+        "created_on": "2020-01-01 15:10:10",
+        "kudos_type": 1,
+        "kudos_assigned": 1,
+        "group": 1,
+        "liked": 3,
+        "comments": 1
+    }
+]

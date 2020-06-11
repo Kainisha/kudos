@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -17,7 +16,12 @@ module.exports = {
     devtool: 'source-map',
     mode: 'development',
     resolve: {
-      extensions: ['.Webpack.js', '.web.js', '.ts', '.js', '.jsx', '.tsx']
+      extensions: ['.Webpack.js', '.web.js', '.ts', '.js', '.jsx', '.tsx'],
+      alias: {
+        root: __dirname,
+        src: path.resolve(__dirname, 'src/'),
+        views: path.resolve(__dirname, 'src/views/')
+      },
     },
     module: {
       rules: [
@@ -59,12 +63,5 @@ module.exports = {
           template: './src/index.html',
           inject: 'body'
       }),
-    ],
-    resolve: {
-        extensions: ['.js', '.jsx'],
-        alias: {
-          root: __dirname,
-          src: path.resolve(__dirname, 'src/'),
-        },
-    },
+    ]
 };
