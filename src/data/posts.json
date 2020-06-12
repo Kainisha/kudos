@@ -2,10 +2,7 @@
     {
         "id": 1,
         "note": "test test test",
-        "author": {
-            "first_name": "test",
-            "last_name": "ddd"
-        },
+        "author_id": 1,
         "created_on": "2020-01-01 15:10:10",
         "kudos_type": 1,
         "kudos_assigned": 1,

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getPosts as getPostsAction } from 'src/actions';
 import MainLayout from 'src/components/layout/MainLayout/MainLayout';
+import Post from 'src/components/organisms/Post/Post';
 
 const Dashboard = ({ posts, getPosts }) => {
   useEffect(() => {
@@ -12,9 +13,9 @@ const Dashboard = ({ posts, getPosts }) => {
 
   return (
     <MainLayout>
-      Dashboard test
-      {posts.map(({ note }) => (
-        <span>{note}</span>
+      {posts.map((post) => (
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <Post {...post} key={`post-${post.id}`} />
       ))}
     </MainLayout>
   );

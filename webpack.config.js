@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
 module.exports = {
     entry: [
         "@babel/polyfill",
@@ -18,11 +17,12 @@ module.exports = {
     devtool: 'source-map',
     mode: 'development',
     resolve: {
-      extensions: ['.js', '.jsx', '.tsx', '.scss', '.css'],
+      extensions: ['.js', '.jsx', '.scss', '.css'],
       alias: {
-        root: __dirname,
+        root: path.resolve(__dirname, 'src/'),
         src: path.resolve(__dirname, 'src/'),
-        views: path.resolve(__dirname, 'src/views/')
+        views: path.resolve(__dirname, 'src/views/'),
+        Layout: path.resolve(__dirname, 'src/components/layout/')
       },
     },
     module: {
