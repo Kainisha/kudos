@@ -1,0 +1,24 @@
+.commnet__input {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    grid-column-gap: 0.5rem;
+    align-items: center;
+
+    .user__avatar {
+        height: 1.8rem;
+        width: 1.8rem;
+    }
+
+    input {
+        border-right: 0;
+    }
+
+    button {
+        border-color: lightgrey;
+        border-left: 0;
+
+        &:not(:last-of-type) {
+            border-right: 0;
+        }
+    }
+}

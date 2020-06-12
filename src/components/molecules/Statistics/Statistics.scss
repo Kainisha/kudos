@@ -1,0 +1,19 @@
+.statistics {
+    padding: 0.5rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 3rem 3rem 2rem;
+    grid-column-gap: 0.5rem;
+}
+
+.group {
+    color: gray;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+
+    .group__icon {
+        margin-right: 0.5rem;
+    }
+}

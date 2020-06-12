@@ -1,8 +1,9 @@
-import { SET_POSTS, SET_USERS } from 'src/actions';
+import { SET_POSTS, SET_USERS, SET_GROUPS } from 'src/actions';
 
 const initState = {
   posts: [],
   users: [],
+  groups: [],
 };
 
 const reducer = (state = initState, { type, payload }) => {
@@ -19,6 +20,13 @@ const reducer = (state = initState, { type, payload }) => {
       return {
         ...state,
         users,
+      };
+    }
+    case SET_GROUPS: {
+      const { groups } = payload;
+      return {
+        ...state,
+        groups,
       };
     }
     default: {

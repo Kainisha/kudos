@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Marketing",
+        "type": 1
+    },
+    {
+        "id": 2,
+        "name": "Programiści",
+        "type": 2
+    },
+    {
+        "id": 3,
+        "name": "Klienci",
+        "type": 3
+    }
+]

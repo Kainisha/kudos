@@ -6,8 +6,8 @@
         "created_on": "2020-01-01 15:10:10",
         "kudos_type": 1,
         "kudos_assigned": 1,
-        "group": 1,
-        "liked": 3,
+        "group_id": 1,
+        "likes": 3,
         "comments": 1
     }
 ]

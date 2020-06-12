@@ -1,0 +1,19 @@
+.options {
+    .dropdown {
+        color: gray;
+        transition: color 300ms ease-in-out;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+
+    svg {
+        transition: color 300s ease-in-out;
+
+        &:hover {
+            svg {
+                color: black;
+            }
+        }
+    }
+}

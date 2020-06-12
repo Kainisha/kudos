@@ -1,6 +1,7 @@
 export const GET_POSTS = 'GET_POSTS';
 export const SET_POSTS = 'SET_POSTS';
 export const SET_USERS = 'SET_USERS';
+export const SET_GROUPS = 'SET_GROUPS';
 
 export const getPosts = () => ({
   type: GET_POSTS,
@@ -14,4 +15,9 @@ export const setPosts = ({ posts }) => ({
 export const setUsers = ({ users }) => ({
   type: SET_USERS,
   payload: { users },
+});
+
+export const setGroups = ({ groups }) => ({
+  type: SET_GROUPS,
+  payload: { groups },
 });
