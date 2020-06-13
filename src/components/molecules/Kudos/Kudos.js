@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/forbid-prop-types */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import cx from 'classnames';
 import './Kudos.scss';
 
-const Kudos = ({ type, userId, form, kudoses, users }) => {
+const Kudos = ({ type, userId, form, kudoses, users, isSelected, onClick }) => {
   const [kudos, setKudos] = useState({});
 
   useEffect(() => {
@@ -18,9 +21,18 @@ const Kudos = ({ type, userId, form, kudoses, users }) => {
     return `${firstName} ${lastName}`;
   };
   const getUserLabel = () => (form ? 'Imię nazwisko' : getFullName());
+  const kudosClasses = cx('kudos', { 'kudos-form': form, 'kudos-selected': isSelected });
+
+  const handleClick = () => {
+    if (!form) {
+      return;
+    }
+
+    onClick(type);
+  };
 
   return (
-    <div className="kudos">
+    <div className={kudosClasses} onClick={handleClick}>
       <div className="kudos__image">
         <img src={kudos.image} alt="kudos" />
       </div>
@@ -38,6 +50,8 @@ Kudos.propTypes = {
   form: PropTypes.bool,
   kudoses: PropTypes.array,
   users: PropTypes.array,
+  isSelected: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 Kudos.defaultProps = {
@@ -45,6 +59,8 @@ Kudos.defaultProps = {
   form: false,
   kudoses: [],
   users: [],
+  isSelected: false,
+  onClick: () => {},
 };
 
 const mapStateToProps = (state) => {

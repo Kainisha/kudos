@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Dashboard from 'src/views/Dashboard';
 import store from 'src/store';
+import ModalHandler from 'src/components/ModalHandler';
 
 const App = () => (
   <Router>
@@ -12,6 +13,7 @@ const App = () => (
           <Dashboard />
         </Route>
       </Switch>
+      <ModalHandler />
     </Provider>
   </Router>
 );

@@ -20,8 +20,8 @@ const Post = ({
       <PostAuthor authorId={authorId} createdOn={createdOn} />
       <div className="post__note">{note}</div>
       <div className="post__kudoses">
-        {kudosAssigned.map(({ type, user_id: userId }) => (
-          <Kudos userId={userId} type={type} />
+        {kudosAssigned.map(({ type, user_id: userId, id }) => (
+          <Kudos userId={userId} type={type} key={`post-kudos-${id}`} />
         ))}
       </div>
       <Statistics likes={likes} groupId={groupId} />

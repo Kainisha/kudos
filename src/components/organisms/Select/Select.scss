@@ -1,0 +1,51 @@
+.select {
+    position: relative;
+
+    &.select-show {
+        .select__value .select__icon {
+            transform: rotateZ(180deg);
+        }
+    }
+}
+
+.select__value {
+    height: 2rem;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+
+    .select__icon {
+        position: absolute;
+        right: 0.5rem;
+        transition: transform 300ms ease-in-out;
+        transform-origin: center;
+    }
+}
+
+.select__menu {
+    position: absolute;
+    bottom: 2rem;
+    background: white;
+    border: 1px solid lightgray;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+
+    li {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 4fr;
+        grid-column-gap: 0.5rem;
+        transition: background-color 300ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #eaeaea;
+        }
+    }
+}

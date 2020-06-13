@@ -1,0 +1,58 @@
+.post__form {
+    display: grid;
+    grid-row-gap: 1rem;
+
+    label {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #353535;
+    }
+}
+
+.post__form__kudoses {
+    display: grid;
+    grid-row-gap: 0.5rem;
+}
+
+.post__form__user {
+    div {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        outline: 0;
+        padding: 0 0.5rem;
+        color: #353535;
+        height: 2rem;
+    }
+}
+
+.post__form__publish {
+    font-weight: 600;
+    background-color: rebeccapurple;
+    border: 1px solid rebeccapurple;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 300ms ease-in-out;
+    font-size: 0.9rem;
+    width: 6rem;
+
+    &:hover {
+        background-color: purple;
+    }
+}
+
+.post__form__group {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-column-gap: 1rem;
+}
+
+.post__form__button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

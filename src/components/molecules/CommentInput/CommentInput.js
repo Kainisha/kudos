@@ -11,7 +11,7 @@ library.add(faGrin, faPaperclip, faImage);
 const CommentInput = () => {
   return (
     <div className="commnet__input">
-      <UserAvatar src="src/images/pikatchu.png" />
+      <UserAvatar src="src/images/pikatchu.png" alt="user avatar" />
       <InputGroup size="sm">
         <FormControl placeholder="Napisz komentarz" aria-label="Napisz komentarz" />
         <InputGroup.Append>

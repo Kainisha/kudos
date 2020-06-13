@@ -5,6 +5,12 @@
     border: 1px solid lightgrey;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    transition: border-color 300ms ease-in-out, background-color 300ms ease-in-out;
+
+    &.kudos-selected {
+        border-color: gray;
+        background-color: #ececec;
+    }
 }
 
 .kudos__image {
@@ -33,4 +39,22 @@
     font-weight: 600;
     font-size: 1.2rem;
     color:#2e2e2e;
+}
+
+.kudos-form {
+    cursor: pointer;
+
+    &:hover {
+        border-color: gray;
+        background-color: #ececec;
+    }
+
+    .kudos__user {
+        font-size: 0.9rem;
+    }
+
+    .kudos__image {
+        width: 3rem;
+        height: 3rem;
+    }
 }
