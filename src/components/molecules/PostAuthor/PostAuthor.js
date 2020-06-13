@@ -34,11 +34,11 @@ const PostAuthor = ({ authorId, createdOn, users }) => {
   };
 
   return (
-    <div className="post__author">
+    <div className="author">
       <UserAvatar src={getAvatar()} alt="Avatar" />
-      <div className="post__author__block">
-        <div className="post__author__name">{getFullName()}</div>
-        <div className="post__author__date">{getInterval()}</div>
+      <div className="author-block">
+        <div className="author-name">{getFullName()}</div>
+        <div className="author-date">{getInterval()}</div>
       </div>
     </div>
   );

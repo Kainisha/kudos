@@ -24,7 +24,7 @@ const GroupIcon = ({ type }) => {
   };
 
   return (
-    <div className="group__icon">
+    <div className="group-icon">
       <FontAwesomeIcon icon={getIcon()} size="xs" />
     </div>
   );

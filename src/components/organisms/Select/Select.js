@@ -30,13 +30,13 @@ const Select = ({ options, onSelect, initValue }) => {
 
   return (
     <div className={selectClasses}>
-      <div className="select__value" onClick={handleShowMenu}>
+      <div className="select-value" onClick={handleShowMenu}>
         <GroupIcon type={value} />
         {getValueLabel()}
-        <FontAwesomeIcon icon={faChevronDown} size="xs" className="select__icon" />
+        <FontAwesomeIcon icon={faChevronDown} size="xs" className="select-icon" />
       </div>
       {showMenu && (
-        <ul className="select__menu">
+        <ul className="select-menu">
           {options.map(({ value: optionValue, label }) => (
             <MenuItem
               value={optionValue}

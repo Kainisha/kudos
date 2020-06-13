@@ -18,14 +18,14 @@ const Post = ({
   return (
     <div className="post">
       <PostAuthor authorId={authorId} createdOn={createdOn} />
-      <div className="post__note">{note}</div>
-      <div className="post__kudoses">
+      <div className="note">{note}</div>
+      <div className="kudoses">
         {kudosAssigned.map(({ type, user_id: userId, id }) => (
           <Kudos userId={userId} type={type} key={`post-kudos-${id}`} />
         ))}
       </div>
       <Statistics likes={likes} groupId={groupId} />
-      <div className="post__footer">
+      <div className="post-footer">
         <CommentInput />
       </div>
     </div>

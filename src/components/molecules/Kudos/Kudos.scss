@@ -13,7 +13,7 @@
     }
 }
 
-.kudos__image {
+.kudos-image {
     width: 4rem;
     height: 4rem;
     display: flex;
@@ -27,7 +27,7 @@
     }
 }
 
-.kudos__content {
+.kudos-content {
     text-align: center;
     color: gray;
     display: flex;
@@ -35,7 +35,7 @@
     font-size: 0.9rem;
 }
 
-.kudos__user {
+.kudos-user {
     font-weight: 600;
     font-size: 1.2rem;
     color:#2e2e2e;
@@ -49,11 +49,11 @@
         background-color: #ececec;
     }
 
-    .kudos__user {
+    .kudos-user {
         font-size: 0.9rem;
     }
 
-    .kudos__image {
+    .kudos-image {
         width: 3rem;
         height: 3rem;
     }

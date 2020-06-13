@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './UserAvatar.scss';
 
 const UserAvatar = ({ src, alt }) => (
-  <div className="user__avatar">
+  <div className="user-avatar">
     <img src={src} alt={alt} />
   </div>
 );

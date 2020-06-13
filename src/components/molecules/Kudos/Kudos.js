@@ -33,12 +33,12 @@ const Kudos = ({ type, userId, form, kudoses, users, isSelected, onClick }) => {
 
   return (
     <div className={kudosClasses} onClick={handleClick}>
-      <div className="kudos__image">
+      <div className="kudos-image">
         <img src={kudos.image} alt="kudos" />
       </div>
-      <div className="kudos__content">
-        <span className="kudos__label">{kudos.label}</span>
-        <span className="kudos__user">{getUserLabel()}</span>
+      <div className="kudos-content">
+        <span className="kudos-label">{kudos.label}</span>
+        <span className="kudos-user">{getUserLabel()}</span>
       </div>
     </div>
   );

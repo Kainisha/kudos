@@ -8,17 +8,17 @@
     grid-row-gap: 0.5rem;
 }
 
-.post__author,
-.post__note,
-.post__kudoses,
+.author,
+.note,
+.kudoses,
 .statistics {
     padding: 0.5rem;
 }
 
-.post__footer {
+.post-footer {
     border-top: 1px solid lightgrey;
 
-    .commnet__input {
+    .commnet-input {
         padding: 0.5rem;
     }
 }
