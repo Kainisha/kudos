@@ -9,3 +9,18 @@
     display: flex;
     align-items: center;
 }
+
+.header-add-post {
+    background-color: rebeccapurple;
+    border: 1px solid rebeccapurple;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    &:hover {
+        background-color: slateblue;
+        border-color: slateblue;
+    }
+}

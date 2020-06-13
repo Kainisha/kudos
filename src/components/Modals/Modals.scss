@@ -1,0 +1,28 @@
+.modal-header {
+    text-transform: uppercase;
+    border-bottom: 0 !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    align-items: center
+}
+
+.modal-close-button {
+    height: 1.3rem;
+    width: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+
+    svg {
+        font-size: 0.9rem;
+    }
+
+    &:hover {
+        background-color: gray;
+        border-color: gray;
+    }
+}
