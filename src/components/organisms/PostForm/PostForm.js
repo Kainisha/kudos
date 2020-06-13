@@ -21,12 +21,12 @@ const PostForm = ({ kudoses, users, groups }) => {
   const handleSelectGroup = (groupId) => setSelectedGroup(groupId);
 
   return (
-    <div className="post__form">
-      <div className="post__form__note">
-        <label htmlFor="post__form__note">Treść posta nad kudosem</label>
-        <textarea id="post__form__note" />
+    <div className="post-form">
+      <div className="post-form-note">
+        <label htmlFor="post-form-note">Treść posta nad kudosem</label>
+        <textarea id="post-form-note" />
       </div>
-      <div className="post__form__user">
+      <div className="post-form-user">
         <label>Wybier osobę, której przyznajesz kudos</label>
         <Autocomplete
           getItemValue={(item) => getUserFullName(item)}
@@ -44,7 +44,7 @@ const PostForm = ({ kudoses, users, groups }) => {
           onSelect={(val) => setSelectedUser(val)}
         />
       </div>
-      <div className="post__form__kudoses">
+      <div className="post-form-kudoses">
         <label>Wybierz kudos</label>
         {kudoses.map(({ type }) => (
           <Kudos
@@ -56,13 +56,13 @@ const PostForm = ({ kudoses, users, groups }) => {
           />
         ))}
       </div>
-      <div className="post__form__group">
+      <div className="post-form-group">
         <div>
           <label>Wybierz grupę</label>
           <Select options={groupsOptions} onSelect={handleSelectGroup} />
         </div>
-        <div className="post__form__button">
-          <button type="button" className="post__form__publish">
+        <div className="post-form-button">
+          <button type="button" className="post-form-publish">
             Opublikuj
           </button>
         </div>
