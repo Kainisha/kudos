@@ -16,13 +16,13 @@ const CommentInput = () => {
         <FormControl placeholder="Napisz komentarz" aria-label="Napisz komentarz" />
         <InputGroup.Append>
           <Button variant="outline-secondary">
+            <FontAwesomeIcon icon={faImage} size="xs" />
+          </Button>
+          <Button variant="outline-secondary">
             <FontAwesomeIcon icon={faGrin} size="xs" />
           </Button>
           <Button variant="outline-secondary">
             <FontAwesomeIcon icon={faPaperclip} size="xs" />
-          </Button>
-          <Button variant="outline-secondary">
-            <FontAwesomeIcon icon={faImage} size="xs" />
           </Button>
         </InputGroup.Append>
       </InputGroup>

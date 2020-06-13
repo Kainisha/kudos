@@ -1,9 +1,10 @@
-import { SET_POSTS, SET_USERS, SET_GROUPS } from 'src/actions';
+import { SET_POSTS, SET_USERS, SET_GROUPS, SET_KUDOSES } from 'src/actions';
 
 const initState = {
   posts: [],
   users: [],
   groups: [],
+  kudos: [],
 };
 
 const reducer = (state = initState, { type, payload }) => {
@@ -27,6 +28,13 @@ const reducer = (state = initState, { type, payload }) => {
       return {
         ...state,
         groups,
+      };
+    }
+    case SET_KUDOSES: {
+      const { kudoses } = payload;
+      return {
+        ...state,
+        kudoses,
       };
     }
     default: {

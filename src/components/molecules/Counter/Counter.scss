@@ -1,4 +1,4 @@
-.commnets__counter {
+.counter {
     display: grid;
     align-items: center;
     grid-template-columns: 1rem 1.5rem;
@@ -7,12 +7,21 @@
     svg {
         color: lightgray;
         transition: color 300ms ease-in-out;
-        cursor: pointer;
     }
 
     span {
         color: gray;
         text-align: center;
         font-size: 0.9rem;
+    }
+
+    &.counter-count {
+        svg {
+            cursor: pointer;
+
+            &:hover {
+                color: gray;
+            }
+        }
     }
 }

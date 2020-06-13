@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './Statistics.scss';
-import LikesCounter from 'src/components/atoms/LikesCounter/LikesCounter';
-import CommentsCounter from 'src/components/atoms/CommentsCounter/CommentsCounter';
+import Counter from 'src/components/molecules/Counter/Counter';
 import Options from 'src/components/atoms/Options/Options';
 import GroupIcon from 'src/components/atoms/GroupIcon/GroupIcon';
 
@@ -24,8 +23,8 @@ const Statistics = ({ likes, groupId, groups }) => {
       <div className="group">
         <GroupIcon type={group.type} /> {group.name}
       </div>
-      <LikesCounter initCounter={likes} />
-      <CommentsCounter />
+      <Counter initCounter={likes} likes count />
+      <Counter />
       <Options options={options} />
     </div>
   );

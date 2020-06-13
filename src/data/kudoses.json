@@ -1,0 +1,32 @@
+[
+    {
+        "type": 1,
+        "image": "src/images/pikatchu.png",
+        "label": "Dziękuje Ci"
+    },
+    {
+        "type": 2,
+        "image": "src/images/pikatchu.png",
+        "label": "Gratulację"
+    },
+    {
+        "type": 3,
+        "image": "src/images/pikatchu.png",
+        "label": "Gracz zespołowy"
+    },
+    {
+        "type": 4,
+        "image": "src/images/pikatchu.png",
+        "label": "Pozytywny wpływ"
+    },
+    {
+        "type": 5,
+        "image": "src/images/pikatchu.png",
+        "label": "Świetny współpracownik"
+    },
+    {
+        "type": 6,
+        "image": "src/images/pikatchu.png",
+        "label": "Przechodzisz samego (samą) siebie"
+    }
+]
