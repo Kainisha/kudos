@@ -5,7 +5,7 @@
     label {
         font-weight: 600;
         font-size: 0.9rem;
-        color: #444444
+        color: #444444;
     }
 }
 
@@ -74,4 +74,34 @@
     font-size: 0.9rem;
     opacity: 0;
     animation: fadeOut 300ms forwards ease-in-out;
+}
+
+.post-form-note-input {
+    height: 10rem;
+    border: 1px solid lightgray;
+
+    textarea {
+        border: 0;
+        color: #444444;
+    }
+}
+
+.post-form-note-input__suggestions{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    color: #444444;
+}
+
+.post-form-note-input__suggestions__item {
+    padding: 0.25rem;
+    transition: background-color 300ms ease-in-out;
+}
+
+.post-form-note-input__suggestions__item--focused {
+    background-color: lightgray;
+}
+
+.post-form-note-counter {
+    font-size: 0.9rem;
+    color: gray;
 }
