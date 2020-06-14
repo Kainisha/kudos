@@ -1,18 +1,18 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import Autocomplete from 'react-autocomplete';
 import { connect } from 'react-redux';
 import Kudos from 'src/components/molecules/Kudos/Kudos';
-import Select from 'src/components/organisms/Select/Select';
+import GroupsSelect from 'src/components/organisms/Select/Select';
 import './PostForm.scss';
 import { addPost as addPostAction } from 'src/actions';
 import modalsContext from 'src/context/modalsContext';
 import moment from 'moment';
+import Select from 'react-select';
 
 const PostForm = ({ kudoses, users, groups, addPost }) => {
   const { setShowModal } = useContext(modalsContext);
   const [selectedKudos, setSelectedKudos] = useState(1);
-  const [selectedUser, setSelectedUser] = useState('');
+  const [selectedUser, setSelectedUser] = useState(null);
   const [selectedGroup, setSelectedGroup] = useState(1);
   // eslint-disable-next-line no-unused-vars
   const [note, setNote] = useState('');
@@ -23,6 +23,13 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
   const groupsOptions = groups.map(({ id, name }) => {
     return { value: id, label: name };
   });
+  const usersOptions = users.map((user) => {
+    const { id } = user;
+    return {
+      value: id,
+      label: getUserFullName(user),
+    };
+  });
   const handleSelectGroup = (groupId) => setSelectedGroup(groupId);
 
   const handleAddPost = () => {
@@ -32,6 +39,8 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
     setShowModal(false);
   };
 
+  const handleSelectUser = ({ value }) => setSelectedUser(value);
+
   return (
     <div className="post-form">
       <div className="post-form-note">
@@ -40,21 +49,7 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
       </div>
       <div className="post-form-user">
         <label>Wybier osobę, której przyznajesz kudos</label>
-        <Autocomplete
-          getItemValue={(item) => getUserFullName(item)}
-          items={users}
-          renderItem={(item, isHighlighted) => (
-            <div
-              style={{ background: isHighlighted ? 'lightgray' : 'white' }}
-              key={`automplete-${item.id}`}
-            >
-              {getUserFullName(item)}
-            </div>
-          )}
-          value={selectedUser}
-          onChange={(e) => setSelectedUser(e.target.value)}
-          onSelect={(val) => setSelectedUser(val)}
-        />
+        <Select options={usersOptions} onChange={handleSelectUser} placeholder="Wybierz osobę" />
       </div>
       <div className="post-form-kudoses">
         <label>Wybierz kudos</label>
@@ -71,7 +66,7 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
       <div className="post-form-group">
         <div>
           <label>Wybierz grupę</label>
-          <Select options={groupsOptions} onSelect={handleSelectGroup} />
+          <GroupsSelect options={groupsOptions} onSelect={handleSelectGroup} />
         </div>
         <div className="post-form-button">
           <button type="button" className="post-form-publish" onClick={handleAddPost}>

@@ -1,5 +1,7 @@
 .select {
     position: relative;
+    border: 1px solid lightgray;
+    border-radius: 5px;
 
     &.select-show {
         .select-value .select-icon {
