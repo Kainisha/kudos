@@ -32,7 +32,7 @@ const Select = ({ options, onSelect, initValue }) => {
     <div className={selectClasses}>
       <div className="select-value" onClick={handleShowMenu}>
         <GroupIcon type={value} />
-        {getValueLabel()}
+        <span>{getValueLabel()}</span>
         <FontAwesomeIcon icon={faChevronDown} size="xs" className="select-icon" />
       </div>
       {showMenu && (

@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Autocomplete from 'react-autocomplete';
 import { connect } from 'react-redux';
 import Kudos from 'src/components/molecules/Kudos/Kudos';
 import Select from 'src/components/organisms/Select/Select';
 import './PostForm.scss';
+import { addPost as addPostAction } from 'src/actions';
+import modalsContext from 'src/context/modalsContext';
+import moment from 'moment';
 
-const PostForm = ({ kudoses, users, groups }) => {
+const PostForm = ({ kudoses, users, groups, addPost }) => {
+  const { setShowModal } = useContext(modalsContext);
   const [selectedKudos, setSelectedKudos] = useState(1);
   const [selectedUser, setSelectedUser] = useState('');
-  // eslint-disable-next-line no-unused-vars
   const [selectedGroup, setSelectedGroup] = useState(1);
+  // eslint-disable-next-line no-unused-vars
+  const [note, setNote] = useState('');
 
   const handleSelectKudos = (value) => setSelectedKudos(value);
   const getUserFullName = ({ first_name: firstName, last_name: lastName }) =>
@@ -19,6 +24,13 @@ const PostForm = ({ kudoses, users, groups }) => {
     return { value: id, label: name };
   });
   const handleSelectGroup = (groupId) => setSelectedGroup(groupId);
+
+  const handleAddPost = () => {
+    const user = users.find((item) => getUserFullName(item) === selectedUser);
+    const createdOn = moment().format('YYYY-MM-DD hh:mm:ss');
+    addPost({ note, selectedKudos, selectedGroup, selectedUserId: user.id, createdOn });
+    setShowModal(false);
+  };
 
   return (
     <div className="post-form">
@@ -62,7 +74,7 @@ const PostForm = ({ kudoses, users, groups }) => {
           <Select options={groupsOptions} onSelect={handleSelectGroup} />
         </div>
         <div className="post-form-button">
-          <button type="button" className="post-form-publish">
+          <button type="button" className="post-form-publish" onClick={handleAddPost}>
             Opublikuj
           </button>
         </div>
@@ -75,6 +87,7 @@ PostForm.propTypes = {
   kudoses: PropTypes.array,
   users: PropTypes.array,
   groups: PropTypes.array,
+  addPost: PropTypes.func.isRequired,
 };
 
 PostForm.defaultProps = {
@@ -88,4 +101,11 @@ const mapStateToProps = (state) => {
   return { kudoses, users, groups };
 };
 
-export default connect(mapStateToProps)(PostForm);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addPost: ({ note, selectedKudos, selectedGroup, selectedUserId, createdOn }) =>
+      dispatch(addPostAction(note, selectedKudos, selectedGroup, selectedUserId, createdOn)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

@@ -5,6 +5,7 @@ body {
 
 .main-content {
     padding: 1rem;
-    display: flex;
+    display: grid;
     justify-content: center;
+    grid-row-gap: 1rem;
 }

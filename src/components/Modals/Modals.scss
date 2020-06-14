@@ -4,7 +4,8 @@
     font-weight: 500;
     font-size: 0.9rem;
     padding: 0.5rem;
-    align-items: center
+    align-items: center;
+    color: #444444;
 }
 
 .modal-close-button {
@@ -15,6 +16,7 @@
     align-items: center;
     background-color: lightgray;
     border: 1px solid lightgray;
+    border-radius: 5px;
     transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
 
     svg {

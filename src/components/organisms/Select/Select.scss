@@ -11,15 +11,19 @@
 .select-value {
     height: 2rem;
     width: 100%;
-    border: 1px solid lightgray;
+    border: 1px solid ligh1fr 4frtgray;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
     padding: 0 0.5rem;
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    align-items: center;
+    grid-column-gap: 0.5rem;
+    color: gray;
 
     .select-icon {
         position: absolute;
         right: 0.5rem;
+        top: 0.6rem;
         transition: transform 300ms ease-in-out;
         transform-origin: center;
     }
@@ -39,7 +43,7 @@
     li {
         display: grid;
         align-items: center;
-        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 1.5rem 4fr;
         grid-column-gap: 0.5rem;
         transition: background-color 300ms ease-in-out;
         cursor: pointer;

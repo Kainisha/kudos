@@ -11,14 +11,11 @@
 .author,
 .note,
 .kudoses,
-.statistics {
-    padding: 0.5rem;
+.statistics,
+.commnet-input {
+    padding: 0.5rem 0.7rem;
 }
 
 .post-footer {
     border-top: 1px solid lightgrey;
-
-    .commnet-input {
-        padding: 0.5rem;
-    }
 }

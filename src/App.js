@@ -7,7 +7,7 @@ import Modals from 'src/components/Modals/Modals';
 import ModalsContext from 'src/context/modalsContext';
 
 const App = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   return (
     <Router>

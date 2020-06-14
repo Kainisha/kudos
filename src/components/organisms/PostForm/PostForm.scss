@@ -5,7 +5,7 @@
     label {
         font-weight: 600;
         font-size: 0.9rem;
-        color: #353535;
+        color: #444444
     }
 }
 
@@ -15,8 +15,17 @@
 }
 
 .post-form-user {
-    div {
+    > div {
         width: 100%;
+
+        > div {
+            max-width: 10rem;
+            border: 1px solid lightgrey;
+
+            > div {
+                cursor: pointer;
+            }
+        }
     }
 
     input {
@@ -57,4 +66,19 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.editor {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  cursor: text;
+  padding: 16px;
+  border-radius: 2px;
+  margin-bottom: 2em;
+  box-shadow: inset 0px 1px 8px -3px #ABABAB;
+  background: #fefefe;
+}
+
+.editor :global(.public-DraftEditor-content) {
+  min-height: 140px;
 }

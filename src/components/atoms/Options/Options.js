@@ -34,7 +34,7 @@ CustomToggle.defaultProps = {
 const Options = ({ options }) => {
   return (
     <div className="options">
-      <Dropdown>
+      <Dropdown alignRight>
         <Dropdown.Toggle as={CustomToggle}>
           <FontAwesomeIcon icon={faEllipsisV} size="xs" />
         </Dropdown.Toggle>

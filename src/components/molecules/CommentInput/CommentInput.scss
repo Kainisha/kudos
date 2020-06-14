@@ -11,6 +11,12 @@
 
     input {
         border-right: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+        &::placeholder {
+            color: lightgray;
+        }
     }
 
     button {
