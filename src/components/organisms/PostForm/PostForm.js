@@ -16,10 +16,11 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
   const [selectedGroup, setSelectedGroup] = useState(1);
   // eslint-disable-next-line no-unused-vars
   const [note, setNote] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSelectKudos = (value) => setSelectedKudos(value);
   const getUserFullName = ({ first_name: firstName, last_name: lastName }) =>
     `${firstName} ${lastName}`;
+
   const groupsOptions = groups.map(({ id, name }) => {
     return { value: id, label: name };
   });
@@ -30,19 +31,46 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
       label: getUserFullName(user),
     };
   });
+
+  const handleSelectKudos = (value) => setSelectedKudos(value);
+  const handleSelectUser = ({ value }) => setSelectedUser(value);
   const handleSelectGroup = (groupId) => setSelectedGroup(groupId);
 
+  const validate = () => {
+    setError('');
+
+    if (selectedUser === null) {
+      setError('Musisz wybrać odbiorcę');
+      return false;
+    }
+
+    if (note.trim() === '') {
+      setError('Treść posta nie może być pusta');
+      return false;
+    }
+
+    return false;
+  };
+
+  const isError = () => error.trim() !== '';
+
   const handleAddPost = () => {
-    const user = users.find((item) => getUserFullName(item) === selectedUser);
+    if (!validate()) {
+      return;
+    }
+
     const createdOn = moment().format('YYYY-MM-DD hh:mm:ss');
-    addPost({ note, selectedKudos, selectedGroup, selectedUserId: user.id, createdOn });
+    addPost({ note, selectedKudos, selectedGroup, selectedUserId: selectedUser, createdOn });
     setShowModal(false);
   };
 
-  const handleSelectUser = ({ value }) => setSelectedUser(value);
-
   return (
     <div className="post-form">
+      {isError() && (
+        <div className="post-form-error alert alert-danger">
+          <span>{error}</span>
+        </div>
+      )}
       <div className="post-form-note">
         <label htmlFor="post-form-note">Treść posta nad kudosem</label>
         <textarea id="post-form-note" />
