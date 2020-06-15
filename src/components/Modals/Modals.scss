@@ -1,3 +1,5 @@
+@import 'src/scss/variables.scss';
+
 .modal-header {
     text-transform: uppercase;
     border-bottom: 0 !important;
@@ -5,7 +7,7 @@
     font-size: 0.9rem;
     padding: 0.5rem;
     align-items: center;
-    color: #444444;
+    color: $label-color;
 }
 
 .modal-close-button {
@@ -15,7 +17,7 @@
     justify-content: center;
     align-items: center;
     background-color: lightgray;
-    border: 1px solid lightgray;
+    border: 1px solid $border-color;
     border-radius: 5px;
     transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
 

@@ -1,6 +1,8 @@
+@import 'src/scss/variables.scss';
+
 .group-icon {
     color: gray;
-    background-color: lightgrey;
+    background-color: $border-color;
     display: flex;
     justify-content: center;
     align-items: center;

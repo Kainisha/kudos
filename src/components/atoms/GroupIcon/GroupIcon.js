@@ -7,17 +7,21 @@ import './GroupIcon.scss';
 
 library.add(faCity, faDesktop, faMale);
 
+const TYPE_MARKETING = 1;
+const TYPE_DEVELOPERS = 2;
+const TYPE_CLIENTS = 3;
+
 const GroupIcon = ({ type }) => {
   const getIcon = () => {
     switch (type) {
       default:
-      case 1: {
+      case TYPE_MARKETING: {
         return faCity;
       }
-      case 2: {
+      case TYPE_DEVELOPERS: {
         return faDesktop;
       }
-      case 3: {
+      case TYPE_CLIENTS: {
         return faMale;
       }
     }
@@ -35,7 +39,7 @@ GroupIcon.propTypes = {
 };
 
 GroupIcon.defaultProps = {
-  type: 0,
+  type: TYPE_MARKETING,
 };
 
 export default GroupIcon;

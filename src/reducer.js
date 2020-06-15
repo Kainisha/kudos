@@ -7,6 +7,9 @@ const initState = {
   kudos: [],
 };
 
+const MIN_ID = 1;
+const MAX_ID = 100000;
+
 const reducer = (state = initState, { type, payload }) => {
   switch (type) {
     case SET_POSTS: {
@@ -39,19 +42,23 @@ const reducer = (state = initState, { type, payload }) => {
     }
     case ADD_POST: {
       const { posts: postsState } = state;
+      const { note, selectedKudos, selectedGroup, selectedUserId, createdOn } = payload;
+      const randomId = Math.floor(Math.random() * (MAX_ID - MIN_ID)) + MIN_ID;
+
+      console.log(selectedGroup);
 
       const test = {
-        id: 5,
-        note: 'note 2',
+        id: randomId,
+        note,
         author_id: 1,
-        created_on: '2020-01-01 15:10:10',
+        created_on: createdOn,
         kudos_assigned: [
           {
-            type: 2,
-            user_id: 1,
+            type: selectedKudos,
+            user_id: selectedUserId,
           },
         ],
-        group_id: 2,
+        group_id: selectedGroup,
         likes: 2,
       };
 

@@ -1,5 +1,7 @@
+@import 'src/scss/variables.scss';
+
 .post {
-    border: 1px solid lightgray;
+    border: 1px solid $border-color;
     border-radius: 0.5rem;
     width: 25rem;
     display: grid;
@@ -16,6 +18,33 @@
     padding: 0.5rem 0.7rem;
 }
 
+.note-input {
+    height: 10rem;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+
+    textarea {
+        pointer-events: none;
+        color: $label-color;
+        border: 0;
+        padding: 0.5rem;
+    }
+}
+
+.note-input__highlighter {
+    z-index: 1;
+    pointer-events: none;
+    padding: 0.5rem;
+}
+
+.note-suggestions {
+    color: $sugestion-color;
+}
+
+.note-hashtags {
+    color: $hashtag-color;
+}
+
 .post-footer {
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid $border-color;
 }

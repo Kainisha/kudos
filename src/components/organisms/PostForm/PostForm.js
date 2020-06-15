@@ -1,15 +1,15 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Kudos from 'src/components/molecules/Kudos/Kudos';
-import GroupsSelect from 'src/components/organisms/Select/Select';
-import './PostForm.scss';
-import { addPost as addPostAction } from 'src/actions';
-import modalsContext from 'src/context/modalsContext';
 import moment from 'moment';
 import Select from 'react-select';
 import { MentionsInput, Mention } from 'react-mentions';
+import modalsContext from 'src/context/modalsContext';
+import { addPost as addPostAction } from 'src/actions';
+import GroupsSelect from 'src/components/organisms/Select/Select';
+import Kudos from 'src/components/molecules/Kudos/Kudos';
 import { queryEmojis, hashTags } from './noteUtilities';
+import './PostForm.scss';
 
 const MAX_CHARACTERS = 300;
 
@@ -63,7 +63,7 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
       return false;
     }
 
-    return false;
+    return true;
   };
 
   const isError = () => error.trim() !== '';
@@ -104,7 +104,7 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
           id="post-form-note-input"
         >
           <Mention
-            className="post-note-suggestions"
+            className="post-form-note-suggestions"
             trigger="@"
             displayTransform={(id, display) => `@${display}`}
             data={usersSugestions}
@@ -113,7 +113,7 @@ const PostForm = ({ kudoses, users, groups, addPost }) => {
             )}
           />
           <Mention
-            className="post-note-hashtags"
+            className="post-form-note-hashtags"
             markup="#[__display__](hashtag:__id__)"
             trigger="#"
             displayTransform={(id, display) => `#${display}`}
@@ -182,7 +182,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addPost: ({ note, selectedKudos, selectedGroup, selectedUserId, createdOn }) =>
-      dispatch(addPostAction(note, selectedKudos, selectedGroup, selectedUserId, createdOn)),
+      dispatch(addPostAction({ note, selectedKudos, selectedGroup, selectedUserId, createdOn })),
   };
 };
 

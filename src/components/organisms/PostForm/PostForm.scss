@@ -1,3 +1,5 @@
+@import 'src/scss/variables.scss';
+
 .post-form {
     display: grid;
     grid-row-gap: 1rem;
@@ -5,7 +7,7 @@
     label {
         font-weight: 600;
         font-size: 0.9rem;
-        color: #444444;
+        color: $label-color
     }
 }
 
@@ -25,13 +27,17 @@
 
     input {
         width: 100%;
-        border: 1px solid lightgray;
+        border: 1px solid $border-color;
         border-radius: 5px;
         outline: 0;
         padding: 0 0.5rem;
         color: #353535;
         height: 2rem;
     }
+}
+
+.post-form-group .select-value .group-icon {
+    color: rebeccapurple;
 }
 
 .post-form-publish {
@@ -42,7 +48,8 @@
     color: white;
     transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
     font-size: 0.9rem;
-    width: 6rem;
+    width: 7rem;
+    height: 2rem;
 
     &:hover {
         background-color: slateblue;
@@ -78,30 +85,65 @@
 
 .post-form-note-input {
     height: 10rem;
-    border: 1px solid lightgray;
+    border: 1px solid $border-color;
 
     textarea {
         border: 0;
-        color: #444444;
+        color: $label-color;
+        padding: 0.5rem;
     }
 }
 
-.post-form-note-input__suggestions{
-    border: 1px solid lightgray;
+.post-form-note-input__suggestions {
+    border: 1px solid $border-color;
     border-radius: 5px;
-    color: #444444;
+    color: $label-color;
 }
 
 .post-form-note-input__suggestions__item {
     padding: 0.25rem;
-    transition: background-color 300ms ease-in-out;
+    transition: background-color 150ms ease-in-out;
 }
 
 .post-form-note-input__suggestions__item--focused {
-    background-color: lightgray;
+    background: #cee4e5;
+}
+
+.post-form-note-input__highlighter {
+    z-index: 1;
+    pointer-events: none;
+    padding: 0.5rem;
+}
+
+.post-form-note-suggestions {
+    color: $sugestion-color;
+}
+
+.post-form-note-hashtags {
+    color: $hashtag-color;
 }
 
 .post-form-note-counter {
     font-size: 0.9rem;
     color: gray;
+}
+
+.editor {
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+    cursor: text;
+    padding: 16px;
+    border-radius: 2px;
+    margin-bottom: 2em;
+    box-shadow: inset 0px 1px 8px -3px #ABABAB;
+    background: #fefefe;
+  }
+
+.editor :global(.public-DraftEditor-content) {
+    min-height: 140px;
+}
+
+.hashtag {
+  color: #1CA782;
+  font-family: cursive;
 }

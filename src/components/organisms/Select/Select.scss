@@ -1,6 +1,8 @@
+@import 'src/scss/variables.scss';
+
 .select {
     position: relative;
-    border: 1px solid lightgray;
+    border: 1px solid $border-color;
     border-radius: 5px;
     cursor: pointer;
 
@@ -14,7 +16,6 @@
 .select-value {
     height: 2rem;
     width: 100%;
-    border: 1px solid ligh1fr 4frtgray;
     border-radius: 5px;
     padding: 0 0.5rem;
     display: grid;
@@ -36,7 +37,7 @@
     position: absolute;
     bottom: 2rem;
     background: white;
-    border: 1px solid lightgray;
+    border: 1px solid $border-color;
     list-style: none;
     margin: 0;
     padding: 0.5rem;

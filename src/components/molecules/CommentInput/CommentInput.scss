@@ -1,3 +1,5 @@
+@import 'src/scss/variables.scss';
+
 .commnet-input {
     display: grid;
     grid-template-columns: 2rem 1fr;
@@ -20,7 +22,7 @@
     }
 
     button {
-        border-color: lightgrey;
+        border-color: $border-color;
         border-left: 0;
 
         &:not(:last-of-type) {
