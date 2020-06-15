@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import './Header.scss';
 import modalsContext from 'src/context/modalsContext';
+import './Header.scss';
 
 const Header = () => {
   const { setShowModal } = useContext(modalsContext);

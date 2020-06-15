@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import UserAvatar from 'src/components/atoms/UserAvatar/UserAvatar';
@@ -30,7 +29,15 @@ const PostAuthor = ({ authorId, createdOn, users }) => {
     const now = moment();
     const createdDate = moment(createdOn);
     const diffDays = now.diff(createdDate, 'days');
-    return diffDays === 1 ? `${diffDays} dzień temu` : `${diffDays} dni temu`;
+
+    switch (diffDays) {
+      case 0:
+        return 'dzisiaj';
+      case 1:
+        return `${diffDays} dzień temu`;
+      default:
+        return `${diffDays} dni temu`;
+    }
   };
 
   return (

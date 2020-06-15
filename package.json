@@ -73,7 +73,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,tsx}": [
+    "src/**/*.js": [
       "prettier --config .prettierrc --write",
       "eslint --fix"
     ]

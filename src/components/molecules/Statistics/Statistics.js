@@ -34,7 +34,6 @@ const Statistics = ({ likes, groupId, groups }) => {
 Statistics.propTypes = {
   likes: PropTypes.number,
   groupId: PropTypes.number.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
   groups: PropTypes.array.isRequired,
 };
 

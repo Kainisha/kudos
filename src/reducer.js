@@ -45,8 +45,6 @@ const reducer = (state = initState, { type, payload }) => {
       const { note, selectedKudos, selectedGroup, selectedUserId, createdOn } = payload;
       const randomId = Math.floor(Math.random() * (MAX_ID - MIN_ID)) + MIN_ID;
 
-      console.log(selectedGroup);
-
       const test = {
         id: randomId,
         note,
