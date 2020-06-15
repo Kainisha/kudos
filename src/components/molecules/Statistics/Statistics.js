@@ -21,7 +21,8 @@ const Statistics = ({ likes, groupId, groups }) => {
   return (
     <div className="statistics">
       <div className="group">
-        <GroupIcon type={group.type} /> {group.name}
+        <GroupIcon type={group.type} />
+        <span>{group.name}</span>
       </div>
       <Counter initCounter={likes} likes count />
       <Counter />

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import cx from 'classnames';
 import './Counter.scss';
 
@@ -26,13 +27,23 @@ const Counter = ({ initCounter, likes, count }) => {
     return faCommentAlt;
   };
 
+  const getTooltipText = () => {
+    if (likes) {
+      return 'Kliknij by polubić';
+    }
+
+    return 'Komentarze';
+  };
+
   const counterClasses = cx('counter', { 'counter-count': count });
 
   return (
-    <div className={counterClasses}>
-      <FontAwesomeIcon icon={getIcon()} size="xs" onClick={handleClick} />
-      <span>{counter}</span>
-    </div>
+    <OverlayTrigger placement="top" delay="300" overlay={<Tooltip>{getTooltipText()}</Tooltip>}>
+      <div className={counterClasses} onClick={handleClick}>
+        <FontAwesomeIcon icon={getIcon()} size="xs" />
+        <span>{counter}</span>
+      </div>
+    </OverlayTrigger>
   );
 };
 
